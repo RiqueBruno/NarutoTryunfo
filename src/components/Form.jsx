@@ -107,7 +107,7 @@ class Form extends Component {
             name=""
             id="superTrunfo"
             data-testid="trunfo-input"
-            value={ cardTrunfo }
+            checked={ cardTrunfo }
           />
         </label>
         <button
@@ -136,6 +136,6 @@ Form.protoType = {
   cardTrunfo: PropTypes.bool.isRequired,
   hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
-  onInputChange: PropTypes.func,
-  onSaveButtonClick: PropTypes.func,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
 };
