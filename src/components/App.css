@@ -45,5 +45,28 @@
   height: 514.86px;
   justify-content: center;
   margin: 2%;
+  position: relative;
   width: 338.7px;
+  z-index: 1;
+}
+
+.lixeira {
+  align-items: center;
+  background-color: rgb(187, 1, 1);
+  border: 1px solid black;
+  border-radius: 4px;
+  bottom: 0;
+  display: flex;
+  height: 5%;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 10%;
+  z-index: 0;
+}
+
+.lixeira:hover {
+  background-color: rgb(161, 46, 46);
+  border: 1px solid rgb(43, 42, 42);
+  scale: 110%;
 }

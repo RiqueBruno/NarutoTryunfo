@@ -69,6 +69,15 @@ class App extends React.Component {
     });
   };
 
+  deleteC = ({ target: { id } }) => {
+    let { CardsColection } = this.state;
+    CardsColection = CardsColection.filter((card) => card.cardName !== id);
+    this.setState({
+      CardsColection,
+      hasTrunfo: this.hasTrunfoFunc(CardsColection),
+    });
+  };
+
   handleChange = ({ target: { value, name } }) => {
     this.setState({
       [name]: value,
@@ -119,7 +128,7 @@ class App extends React.Component {
           </nav>
           <article className="cardList">
             {CardsColection.map((card) => (
-              <div className="CardsOfList" key={ Math.random() }>
+              <div className="CardsOfList" key={ card.cardName }>
                 <Card
                   className="cardArt"
                   cardName={ card.cardName }
@@ -131,6 +140,14 @@ class App extends React.Component {
                   cardRare={ card.cardRare }
                   cardTrunfo={ card.cardTrunfo }
                 />
+                <button
+                  className="lixeira"
+                  id={ card.cardName }
+                  data-testid="delete-button"
+                  onClick={ this.deleteC }
+                >
+                  🗑️
+                </button>
               </div>
             ))}
           </article>
