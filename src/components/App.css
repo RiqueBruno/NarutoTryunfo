@@ -19,9 +19,31 @@
 
 .cardArea {
   align-items: center;
-  background-color: aqua;
   box-sizing: border-box;
   display: flex;
   justify-content: end;
   width: 50%;
+}
+
+.cards {
+  background-color: aqua;
+  height: 900px;
+  width: 80%;
+}
+
+.cardList {
+  background-color: cornflowerblue;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.CardsOfList {
+  align-items: center;
+  background-color: blue;
+  display: flex;
+  height: 514.86px;
+  justify-content: center;
+  margin: 2%;
+  width: 338.7px;
 }
