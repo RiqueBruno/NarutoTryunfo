@@ -1,0 +1,27 @@
+.appB {
+  background-color: white;
+  border-radius: 1%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+}
+
+.formArea {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+
+.cardArea {
+  align-items: center;
+  background-color: aqua;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: end;
+  width: 50%;
+}

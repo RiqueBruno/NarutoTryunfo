@@ -4,21 +4,13 @@ import './Card.css';
 
 class Card extends Component {
   render() {
-    const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-    } = this.props;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo } = this.props;
     return (
       <div className="baseCard">
-        <div data-testid="trunfo-card" className="superTrunfo">
-          { cardTrunfo ? 'Super Trunfo' : '' }
-        </div>
+        { cardTrunfo
+          ? <div className="spf" data-testid="trunfo-card">Super Trunfo</div>
+          : ''}
         <div className="upCard">
           <div className="cabCard">
             <p data-testid="rare-card" className="rarityCard">

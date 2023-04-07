@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Form.css';
 
 class Form extends Component {
   render() {
-    const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-      // hasTrunfo,
-      isSaveButtonDisabled,
-      onInputChange,
-      onSaveButtonClick,
-    } = this.props;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
+      cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled,
+      onInputChange, onSaveButtonClick } = this.props;
     return (
-      <div>
+      <form className="form">
         <label htmlFor="nameCard">
           Nome da Carta:
           <input
@@ -32,20 +22,22 @@ class Form extends Component {
         </label>
         <label htmlFor="textarea">
           Descrição da carta:
-          <input
+          <textarea
             onChange={ onInputChange }
-            type="textarea"
+            type="TextArea"
             name="cardDescription"
             id="textarea"
             data-testid="description-input"
             value={ cardDescription }
+            cols="30"
+            rows="3"
           />
         </label>
         <label htmlFor="atribut1">
           Poder:
           <input
             onChange={ onInputChange }
-            type="text"
+            type="number"
             name="cardAttr1"
             id="atribut1"
             data-testid="attr1-input"
@@ -56,7 +48,7 @@ class Form extends Component {
           Chakra:
           <input
             onChange={ onInputChange }
-            type="text"
+            type="number"
             name="cardAttr2"
             id="atribut2"
             data-testid="attr2-input"
@@ -67,7 +59,7 @@ class Form extends Component {
           Vida:
           <input
             onChange={ onInputChange }
-            type="text"
+            type="number"
             name="cardAttr3"
             id="atribut3"
             data-testid="attr3-input"
@@ -94,7 +86,6 @@ class Form extends Component {
             data-testid="rare-input"
             value={ cardRare }
           >
-            <option value=""> </option>
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
@@ -102,14 +93,18 @@ class Form extends Component {
         </label>
         <label htmlFor="superTrunfo">
           Super Trunfo:
-          <input
-            onChange={ onInputChange }
-            type="checkbox"
-            name="cardTrunfo"
-            id="superTrunfo"
-            data-testid="trunfo-input"
-            checked={ cardTrunfo }
-          />
+          {hasTrunfo
+            ? 'Você já tem um Super Trunfo em seu baralho'
+            : (
+              <input
+                onChange={ onInputChange }
+                type="checkbox"
+                name="cardTrunfo"
+                id="superTrunfo"
+                data-testid="trunfo-input"
+                checked={ cardTrunfo }
+              />
+            )}
         </label>
         <button
           onClick={ onSaveButtonClick }
@@ -120,7 +115,7 @@ class Form extends Component {
           Salvar
 
         </button>
-      </div>
+      </form>
     );
   }
 }
@@ -136,7 +131,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
