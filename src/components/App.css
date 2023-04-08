@@ -1,3 +1,19 @@
+.header {
+  background-color: aqua;
+  height: 20vw;
+  width: 100vw;
+}
+
+.divLogo {
+  height: 366.24px;
+  width: 659px;
+}
+
+.divLogo img {
+  height: 100%;
+  width: 100%;
+}
+
 .appB {
   background-color: white;
   border-radius: 1%;

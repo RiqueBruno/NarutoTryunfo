@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './components/App.css';
 import Form from './components/Form';
 import Card from './components/Card';
@@ -90,9 +90,18 @@ class App extends React.Component {
       CardsColection,
     } = this.state;
     return (
-      <>
-        <div className="appB">
-          <div className="formArea">
+      <main>
+        <header className="header">
+          <div className="divLogo">
+            <img
+              src="./components/imagensP/logo.png"
+              alt="Logo do site TryUnfo - Edição Naruto"
+              className="imageLogo"
+            />
+          </div>
+        </header>
+        <article className="appB">
+          <section className="formArea">
             <Form
               cardName={ cardName }
               cardDescription={ cardDescription }
@@ -107,8 +116,8 @@ class App extends React.Component {
               onInputChange={ this.handleChange }
               onSaveButtonClick={ this.onSaveBtnClick }
             />
-          </div>
-          <div className="cardArea">
+          </section>
+          <aside className="cardArea">
             <Card
               cardName={ cardName }
               cardDescription={ cardDescription }
@@ -119,14 +128,13 @@ class App extends React.Component {
               cardRare={ cardRare }
               cardTrunfo={ cardTrunfo }
             />
-          </div>
-
-        </div>
-        <section className="cards">
+          </aside>
+        </article>
+        <article className="cards">
           <nav>
             <p>Coleção de Cards</p>
           </nav>
-          <article className="cardList">
+          <section className="cardList">
             {CardsColection.map((card) => (
               <div className="CardsOfList" key={ card.cardName }>
                 <Card
@@ -150,9 +158,9 @@ class App extends React.Component {
                 </button>
               </div>
             ))}
-          </article>
-        </section>
-      </>
+          </section>
+        </article>
+      </main>
     );
   }
 }

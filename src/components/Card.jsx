@@ -7,57 +7,53 @@ class Card extends Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo } = this.props;
     return (
-      <div className="baseCard">
+      <section className="baseCard">
         { cardTrunfo
           ? <div className="spf" data-testid="trunfo-card">Super Trunfo</div>
           : ''}
-        <div className="upCard">
-          <div className="cabCard">
-            <p data-testid="rare-card" className="rarityCard">
-              { cardRare }
-            </p>
-            <p data-testid="name-card" className="nameCard">
-              { cardName }
-            </p>
-          </div>
+        <article className="upCard">
+          <span className="cabCard">
+            <h4 data-testid="rare-card" className="rarityCard">{ cardRare }</h4>
+            <h3 data-testid="name-card" className="nameCard">{ cardName }</h3>
+          </span>
           <img
             src={ cardImage }
             alt={ cardName }
             data-testid="image-card"
             className="imageCard"
           />
-        </div>
-        <div className="btpartCard">
-          <div className="divDescript">
+        </article>
+        <article className="btpartCard">
+          <span className="divDescript">
             <p
               data-testid="description-card"
               className="descriptionCard"
             >
               { cardDescription }
             </p>
-          </div>
+          </span>
           <div className="atributeCardClass">
             <div className="AtribCard">
-              <p>PODER</p>
+              <h5>PODER</h5>
               <div className="atributeCard1" data-testid="attr1-card">
                 { cardAttr1 }
               </div>
             </div>
             <div className="AtribCard">
-              <p>CHAKRA</p>
+              <h5>CHAKRA</h5>
               <div className="atributeCard2" data-testid="attr2-card">
                 { cardAttr2 }
               </div>
             </div>
             <div className="AtribCard">
-              <p>VIDA</p>
+              <h5>VIDA</h5>
               <div className="atributeCard3" data-testid="attr3-card">
                 { cardAttr3 }
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     );
   }
 }
