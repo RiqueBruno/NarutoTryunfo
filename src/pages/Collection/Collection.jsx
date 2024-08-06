@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "../../components/Form/Form";
 import Card from "../../components/Card/Card";
+import CardFilter from "../../components/CardFilter/CardFilter";
 
 export default function Cards() {
   const [cardForm, setCardForm] = new useState({
@@ -23,8 +24,14 @@ export default function Cards() {
 
   return (
     <div>
-      <Form cardForm={cardForm} onFormChange={handleFormChange} />
-      <Card cardForm={cardForm} />
+      <div>
+        <Form cardForm={cardForm} onFormChange={handleFormChange} />
+        <Card cardForm={cardForm} />
+      </div>
+      <div>
+        <CardFilter cardForm={cardForm} />
+      </div>
     </div>
+    //criar mais um componente para renderizar as cartas
   );
 }
