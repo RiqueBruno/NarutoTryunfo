@@ -1,13 +1,14 @@
-import './App.css'
+import React from 'react'
+import Header from './components/Header/Header'
 import Content from './pages/Content'
+import './App.css'
 
 function App() {
-
   return (
-    <>
-      <h1>Oii</h1>
+    <main className='main'>
+      <Header/>
       <Content/>
-    </>
+    </main>
   )
 }
 

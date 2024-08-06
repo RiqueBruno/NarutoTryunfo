@@ -1,0 +1,30 @@
+.header {
+    background-color: #A54500;
+    display: flex;
+    height: 20vh;
+    width: 100%;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.imgLink {
+    height: 100%;
+}
+
+.imgLink > img {
+    height: 100%;
+}
+
+.linkClass {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    font-size: 2rem;
+}
+
+.linkClass:hover {
+    border-radius: 10px;
+    background-color: orangered;
+}
