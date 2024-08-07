@@ -1,0 +1,16 @@
+.formBase {
+    background-color: burlywood;
+    width: 100%;
+    height: 500px;
+    display: flex;
+}
+
+.form {
+    width: 30%;
+}
+
+.filterBase {
+    background-color: chartreuse;
+    width: 100%;
+    height: 500px;
+}

@@ -12,7 +12,7 @@ function Form({ cardForm, onFormChange }) {
     cardRare,
     cardTrunfo,
     //hasTrunfo,
-    isSaveButtonDisabled
+    isSaveButtonDisabled,
   } = cardForm;
 
   const handleChange = (e) => {
@@ -39,11 +39,57 @@ function Form({ cardForm, onFormChange }) {
     const descript = stt.cardDescription.length > 10;
     const Image = stt.cardImage.length > 0;
 
+    const isDisabled = !(name && Image && descript && atr1 && atr2 && atr3 && atr);
+
+
     onFormChange((prevForm) => ({
       ...prevForm,
-      isSaveButtonDisabled: !(name && Image && descript
-        && atr1 && atr2 && atr3 && atr),
+      isSaveButtonDisabled: isDisabled,
     }));    
+  };
+
+  const onClickBtn = () => {
+    onFormChange((prevForm) => {
+      const {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+        CardsColection,
+      } = prevForm;
+
+      const card = {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+      };
+
+      const updatedCardsColection = [...CardsColection, card];
+
+      const resetForm = {
+        ...prevForm,
+        cardName: "",
+        cardDescription: "",
+        cardAttr1: "",
+        cardAttr2: "",
+        cardAttr3: "",
+        cardImage: "",
+        cardRare: "normal",
+        cardTrunfo: false,
+        CardsColection: updatedCardsColection,
+       };
+      
+      return resetForm;
+    });
   };
 
   return (
@@ -131,7 +177,7 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <button
-        onClick={() => { console.log("Salvou"); }}
+        onClick={onClickBtn}
         disabled={isSaveButtonDisabled}
       >
         Salvar
