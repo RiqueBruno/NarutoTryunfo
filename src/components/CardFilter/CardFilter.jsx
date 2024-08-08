@@ -6,16 +6,19 @@ import { setCollectionCards } from "../../utils/CardCollectionWS";
 
 //-----------------------------------------------
 // VERIFICAR SE TEM TRUNFO - OK
-// DEPOIS DISSO CRIAR O BTN DE APAGAR A CARTA
+// DEPOIS DISSO CRIAR O BTN DE APAGAR A CARTA - OK
 // DEPOIS O DE EDITAR
 // ----------------------------------------------
 
 function CardFilter({ CardsColection, setCardForm }) {
+  const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo);
+
   const deleteCard = ({ target: { id } }) => {
     const newCollection = CardsColection.filter((card) => card.cardName !== id);
     setCardForm((prevState) => ({
       ...prevState,
       CardsColection: newCollection,
+      hasTrunfo: hasTrunfoFunc(newCollection),
     }));
     setCollectionCards("CardsColection", newCollection)
   };
