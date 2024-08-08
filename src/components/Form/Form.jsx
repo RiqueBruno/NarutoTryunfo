@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import { setCollectionCards } from "../../utils/CardCollectionWS";
 
 function Form({ cardForm, onFormChange }) {
   const {
@@ -11,13 +12,15 @@ function Form({ cardForm, onFormChange }) {
     cardImage,
     cardRare,
     cardTrunfo,
-    //hasTrunfo,
+    hasTrunfo,
     isSaveButtonDisabled,
   } = cardForm;
 
+  const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : value;
+    const newValue = type === "checkbox" ? checked : value;
 
     onFormChange((prevForm) => {
       const updatedForm = { ...prevForm, [name]: newValue };
@@ -29,23 +32,34 @@ function Form({ cardForm, onFormChange }) {
   const buttonVerify = (stt) => {
     const maxValue = 90;
     const maxTotalValue = 210;
-    const atr1 = Number(stt.cardAttr1) >= 0 && Number(stt.cardAttr1) <= maxValue;
-    const atr2 = Number(stt.cardAttr2) >= 0 && Number(stt.cardAttr2) <= maxValue;
-    const atr3 = Number(stt.cardAttr3) >= 0 && Number(stt.cardAttr3) <= maxValue;
-    const atr = Number(stt.cardAttr1) + Number(stt.cardAttr2)
-      + Number(stt.cardAttr3) <= maxTotalValue;
-    
+    const atr1 =
+      Number(stt.cardAttr1) >= 0 && Number(stt.cardAttr1) <= maxValue;
+    const atr2 =
+      Number(stt.cardAttr2) >= 0 && Number(stt.cardAttr2) <= maxValue;
+    const atr3 =
+      Number(stt.cardAttr3) >= 0 && Number(stt.cardAttr3) <= maxValue;
+    const atr =
+      Number(stt.cardAttr1) + Number(stt.cardAttr2) + Number(stt.cardAttr3) <=
+      maxTotalValue;
+
     const name = stt.cardName.length > 0;
     const descript = stt.cardDescription.length > 10;
     const Image = stt.cardImage.length > 0;
 
-    const isDisabled = !(name && Image && descript && atr1 && atr2 && atr3 && atr);
-
+    const isDisabled = !(
+      name &&
+      Image &&
+      descript &&
+      atr1 &&
+      atr2 &&
+      atr3 &&
+      atr
+    );
 
     onFormChange((prevForm) => ({
       ...prevForm,
       isSaveButtonDisabled: isDisabled,
-    }));    
+    }));
   };
 
   const onClickBtn = () => {
@@ -85,9 +99,12 @@ function Form({ cardForm, onFormChange }) {
         cardImage: "",
         cardRare: "normal",
         cardTrunfo: false,
+        hasTrunfo: hasTrunfoFunc(updatedCardsColection),
         CardsColection: updatedCardsColection,
-       };
-      
+      };
+
+      setCollectionCards("CardsColection", updatedCardsColection);
+
       return resetForm;
     });
   };
@@ -168,18 +185,19 @@ function Form({ cardForm, onFormChange }) {
       </label>
       <label htmlFor="cardTrunfo">
         Super Trunfo:
-        <input
-          onChange={handleChange}
-          type="checkbox"
-          name="cardTrunfo"
-          id="cardTrunfo"
-          checked={cardTrunfo}
-        />
+        {hasTrunfo ? (
+          "Você já tem um Super Trunfo em seu baralho"
+        ) : (
+          <input
+            onChange={handleChange}
+            type="checkbox"
+            name="cardTrunfo"
+            id="cardTrunfo"
+            checked={cardTrunfo}
+          />
+        )}
       </label>
-      <button
-        onClick={onClickBtn}
-        disabled={isSaveButtonDisabled}
-      >
+      <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
         Salvar
       </button>
     </div>

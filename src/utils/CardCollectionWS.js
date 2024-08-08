@@ -1,8 +1,8 @@
-const setCollectionCards = (name, arr) => {
+export const setCollectionCards = (name, arr) => {
     localStorage.setItem(name, JSON.stringify(arr));
 }
 
-const getCollectionCards = (name) => {
+export const getCollectionCards = (name) => {
     const collection = JSON.parse(localStorage.getItem(name)) || [];
     if(collection.length === 0) {
         setCollectionCards(name, collection);

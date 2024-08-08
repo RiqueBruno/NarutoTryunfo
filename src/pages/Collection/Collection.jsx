@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "../../components/Form/Form";
 import Card from "../../components/Card/Card";
 import CardFilter from "../../components/CardFilter/CardFilter";
+import { getCollectionCards } from "../../utils/CardCollectionWS"
 import "./Collection.css";
 
 export default function Collection() {
@@ -23,6 +24,18 @@ export default function Collection() {
     setCardForm(newCardForm);
   };
 
+  useEffect(() => {
+    const initializeCardCollection = () => {
+      const collection = getCollectionCards("CardsColection");
+      setCardForm((prevState) => ({
+        ...prevState,
+        CardsColection: collection,
+      }));
+    };
+
+    initializeCardCollection();
+  }, []);
+
   return (
     <div>
       <div className="formBase">
@@ -43,9 +56,8 @@ export default function Collection() {
         </div>
       </div>
       <div className="filterBase">
-        <CardFilter CardsColection={cardForm.CardsColection} />
+        <CardFilter CardsColection={cardForm.CardsColection} setCardForm={setCardForm}/>
       </div>
     </div>
-    //criar mais um componente para renderizar as cartas
   );
 }

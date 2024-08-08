@@ -2,9 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import Card from "../Card/Card";
 import "./CardFilter.css";
+import { setCollectionCards } from "../../utils/CardCollectionWS";
 
-function CardFilter({ CardsColection }) {
-  console.log(CardsColection);
+//-----------------------------------------------
+// VERIFICAR SE TEM TRUNFO - OK
+// DEPOIS DISSO CRIAR O BTN DE APAGAR A CARTA
+// DEPOIS O DE EDITAR
+// ----------------------------------------------
+
+function CardFilter({ CardsColection, setCardForm }) {
+  const deleteCard = ({ target: { id } }) => {
+    const newCollection = CardsColection.filter((card) => card.cardName !== id);
+    setCardForm((prevState) => ({
+      ...prevState,
+      CardsColection: newCollection,
+    }));
+    setCollectionCards("CardsColection", newCollection)
+  };
 
   return (
     <div className="filter">
@@ -24,8 +38,10 @@ function CardFilter({ CardsColection }) {
               />
             </div>
             <div>
-              <button>✏️</button>
-              <button>🗑️</button>
+              <button id={card.cardName}>✏️</button>
+              <button id={card.cardName} onClick={deleteCard}>
+                🗑️
+              </button>
             </div>
           </div>
         ))}
@@ -38,4 +54,16 @@ export default CardFilter;
 
 CardFilter.propTypes = {
   CardsColection: PropTypes.array.isRequired,
+  setCardForm: PropTypes.shape({
+    cardName: PropTypes.string.isRequired,
+    cardDescription: PropTypes.string.isRequired,
+    cardAttr1: PropTypes.string.isRequired,
+    cardAttr2: PropTypes.string.isRequired,
+    cardAttr3: PropTypes.string.isRequired,
+    cardImage: PropTypes.string.isRequired,
+    cardRare: PropTypes.string.isRequired,
+    cardTrunfo: PropTypes.bool.isRequired,
+    hasTrunfo: PropTypes.bool.isRequired,
+    isSaveButtonDisabled: PropTypes.bool.isRequired,
+  }).isRequired,
 };
