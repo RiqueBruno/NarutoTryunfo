@@ -18,6 +18,8 @@ export default function Collection() {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     CardsColection: [],
+    isEditing: false,
+    cardID:'',
   });
 
   const handleFormChange = (newCardForm) => {

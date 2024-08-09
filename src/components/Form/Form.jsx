@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { setCollectionCards } from "../../utils/CardCollectionWS";
+import { generateId } from "../../utils/GenerateID";
 
 function Form({ cardForm, onFormChange }) {
   const {
@@ -14,6 +15,8 @@ function Form({ cardForm, onFormChange }) {
     cardTrunfo,
     hasTrunfo,
     isSaveButtonDisabled,
+    isEditing,
+    cardID,
   } = cardForm;
 
   const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo);
@@ -62,6 +65,8 @@ function Form({ cardForm, onFormChange }) {
     }));
   };
 
+  
+
   const onClickBtn = () => {
     onFormChange((prevForm) => {
       const {
@@ -77,6 +82,7 @@ function Form({ cardForm, onFormChange }) {
       } = prevForm;
 
       const card = {
+        id: generateId(cardName),
         cardName,
         cardDescription,
         cardAttr1,
@@ -88,6 +94,58 @@ function Form({ cardForm, onFormChange }) {
       };
 
       const updatedCardsColection = [...CardsColection, card];
+
+      const resetForm = {
+        ...prevForm,
+        cardName: "",
+        cardDescription: "",
+        cardAttr1: "",
+        cardAttr2: "",
+        cardAttr3: "",
+        cardImage: "",
+        cardRare: "normal",
+        cardTrunfo: false,
+        hasTrunfo: hasTrunfoFunc(updatedCardsColection),
+        CardsColection: updatedCardsColection,
+      };
+
+      setCollectionCards("CardsColection", updatedCardsColection);
+
+      return resetForm;
+    });
+  };
+
+  const onClickBtnToSaveEdit = () => {
+    onFormChange((prevForm) => {
+      const {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+        CardsColection,
+      } = prevForm;
+
+      const updatedCardsColection = CardsColection.map((card) => {
+        if (card.id === cardID) {
+          return {
+            ...card,
+            id: generateId(cardName),
+            cardName,
+            cardDescription,
+            cardAttr1,
+            cardAttr2,
+            cardAttr3,
+            cardImage,
+            cardRare,
+            cardTrunfo,
+          }
+        }
+        return card;
+      })
 
       const resetForm = {
         ...prevForm,
@@ -197,9 +255,18 @@ function Form({ cardForm, onFormChange }) {
           />
         )}
       </label>
-      <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
-        Salvar
-      </button>
+        { //primeiro edita e o segundo salva
+          isEditing ? (
+            <button onClick={onClickBtnToSaveEdit}>
+            Salvar ✏️
+          </button>
+
+          ) : (
+            <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
+            Salvar +
+          </button>
+          )
+        }
     </div>
   );
 }
@@ -216,6 +283,8 @@ Form.propTypes = {
     cardTrunfo: PropTypes.bool.isRequired,
     hasTrunfo: PropTypes.bool.isRequired,
     isSaveButtonDisabled: PropTypes.bool.isRequired,
+    isEditing: PropTypes.bool.isRequired,
+    cardID: PropTypes.string.isRequired,
   }).isRequired,
   onFormChange: PropTypes.func.isRequired,
 };

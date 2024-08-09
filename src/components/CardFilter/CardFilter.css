@@ -1,15 +1,34 @@
 .filter {
     width: 100%;
     height: 100%;
+    padding-top: 50px;
 }
 
 .listOfCards {
     width: 100%;
-    height: 100%; 
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .CardsOfList {
-    background-color: brown;
-    width: 300px;
-    height: 400px;
+    background-color: rgb(42, 165, 106);
+    width: 380px;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardMenu {
+    position: absolute;
 }

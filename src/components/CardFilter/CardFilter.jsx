@@ -4,17 +4,11 @@ import Card from "../Card/Card";
 import "./CardFilter.css";
 import { setCollectionCards } from "../../utils/CardCollectionWS";
 
-//-----------------------------------------------
-// VERIFICAR SE TEM TRUNFO - OK
-// DEPOIS DISSO CRIAR O BTN DE APAGAR A CARTA - OK
-// DEPOIS O DE EDITAR
-// ----------------------------------------------
-
-function CardFilter({ CardsColection, setCardForm }) {
-  const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo);
+function CardFilter({ CardsColection, setCardForm }) {  
+  const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo) || false;
 
   const deleteCard = ({ target: { id } }) => {
-    const newCollection = CardsColection.filter((card) => card.cardName !== id);
+    const newCollection = CardsColection.find((card) => card.id !== id) || [];
     setCardForm((prevState) => ({
       ...prevState,
       CardsColection: newCollection,
@@ -23,12 +17,31 @@ function CardFilter({ CardsColection, setCardForm }) {
     setCollectionCards("CardsColection", newCollection)
   };
 
+  const editCard = ({ target: { id } }) => {
+    const cardToEdit = CardsColection.filter((card) => card.id == id);
+    const card = cardToEdit[0];
+    
+    setCardForm((prevState) => ({
+      ...prevState,
+      cardName: card.cardName,
+      cardDescription: card.cardDescription,
+      cardAttr1: card.cardAttr1,
+      cardAttr2: card.cardAttr2,
+      cardAttr3: card.cardAttr3,
+      cardImage: card.cardImage,
+      cardRare: card.cardRare,
+      cardTrunfo: card.cardTrunfo,
+      isEditing: true,
+      cardID: card.id,
+    }));
+  }
+
   return (
     <div className="filter">
       <div className="listOfCards">
         {CardsColection.map((card, index) => (
           <div className="CardsOfList" key={index}>
-            <div>
+            <div className="card">
               <Card
                 cardName={card.cardName}
                 cardDescription={card.cardDescription}
@@ -40,9 +53,11 @@ function CardFilter({ CardsColection, setCardForm }) {
                 cardTrunfo={card.cardTrunfo}
               />
             </div>
-            <div>
-              <button id={card.cardName}>✏️</button>
-              <button id={card.cardName} onClick={deleteCard}>
+            <div className="cardMenu">
+              <button id={card.id} onClick={editCard}>
+                ✏️
+              </button>
+              <button id={card.id} onClick={deleteCard}>
                 🗑️
               </button>
             </div>
@@ -57,16 +72,5 @@ export default CardFilter;
 
 CardFilter.propTypes = {
   CardsColection: PropTypes.array.isRequired,
-  setCardForm: PropTypes.shape({
-    cardName: PropTypes.string.isRequired,
-    cardDescription: PropTypes.string.isRequired,
-    cardAttr1: PropTypes.string.isRequired,
-    cardAttr2: PropTypes.string.isRequired,
-    cardAttr3: PropTypes.string.isRequired,
-    cardImage: PropTypes.string.isRequired,
-    cardRare: PropTypes.string.isRequired,
-    cardTrunfo: PropTypes.bool.isRequired,
-    hasTrunfo: PropTypes.bool.isRequired,
-    isSaveButtonDisabled: PropTypes.bool.isRequired,
-  }).isRequired,
+  setCardForm: PropTypes.func.isRequired,
 };
