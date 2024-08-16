@@ -33,8 +33,8 @@ function Form({ cardForm, onFormChange }) {
   };
 
   const buttonVerify = (stt) => {
-    const maxValue = 90;
-    const maxTotalValue = 210;
+    const maxValue = 100;
+    const maxTotalValue = 300;
     const atr1 =
       Number(stt.cardAttr1) >= 0 && Number(stt.cardAttr1) <= maxValue;
     const atr2 =
@@ -64,8 +64,6 @@ function Form({ cardForm, onFormChange }) {
       isSaveButtonDisabled: isDisabled,
     }));
   };
-
-  
 
   const onClickBtn = () => {
     onFormChange((prevForm) => {
@@ -142,10 +140,10 @@ function Form({ cardForm, onFormChange }) {
             cardImage,
             cardRare,
             cardTrunfo,
-          }
+          };
         }
         return card;
-      })
+      });
 
       const resetForm = {
         ...prevForm,
@@ -255,18 +253,16 @@ function Form({ cardForm, onFormChange }) {
           />
         )}
       </label>
-        { //primeiro edita e o segundo salva
-          isEditing ? (
-            <button onClick={onClickBtnToSaveEdit}>
-            Salvar ✏️
-          </button>
-
-          ) : (
-            <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
+      {
+        //primeiro edita e o segundo salva
+        isEditing ? (
+          <button onClick={onClickBtnToSaveEdit}>Salvar ✏️</button>
+        ) : (
+          <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
             Salvar +
           </button>
-          )
-        }
+        )
+      }
     </div>
   );
 }
