@@ -1,16 +1,34 @@
-.formBase {
-    background-color: burlywood;
+.collection {
     width: 100%;
-    height: 500px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    background-color: orange;
+}
+
+.formBase {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .form {
-    width: 30%;
+    width: 50%;
+}
+
+.card {
+    width: 50%;
 }
 
 .filterBase {
-    background-color: chartreuse;
-    width: 100%;
-    height: 500px;
+    margin-top: 20px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

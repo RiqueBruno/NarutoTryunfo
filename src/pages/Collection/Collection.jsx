@@ -39,12 +39,14 @@ export default function Collection() {
   }, []);
 
   return (
-    <div>
+    <div className="collection">
       <div className="formBase">
         <div className="form">
+          <h1>Add a new Card</h1>
           <Form cardForm={cardForm} onFormChange={handleFormChange} />
         </div>
         <div className="card">
+          <h2>Preview</h2>
           <Card
             cardName={cardForm.cardName}
             cardDescription={cardForm.cardDescription}
@@ -63,6 +65,9 @@ export default function Collection() {
           setCardForm={setCardForm}
         />
       </div>
+      <div className="bol b1" />
+      <div className="bol b2" />
+      <div className="bol b3" />
     </div>
   );
 }
