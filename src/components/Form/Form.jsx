@@ -168,7 +168,7 @@ function Form({ cardForm, onFormChange }) {
   return (
     <div>
       <label htmlFor="cardName">
-        Nome da Carta:
+        Name:
         <input
           onChange={handleChange}
           type="text"
@@ -178,7 +178,7 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <label htmlFor="cardDescription">
-        Descrição da carta:
+        Description:
         <textarea
           onChange={handleChange}
           name="cardDescription"
@@ -187,7 +187,7 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <label htmlFor="cardAttr1">
-        Atributo 1:
+        Chakra:
         <input
           onChange={handleChange}
           type="number"
@@ -197,7 +197,7 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <label htmlFor="cardAttr2">
-        Atributo 2:
+        Power:
         <input
           onChange={handleChange}
           type="number"
@@ -207,7 +207,7 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <label htmlFor="cardAttr3">
-        Atributo 3:
+        HP:
         <input
           onChange={handleChange}
           type="number"
@@ -217,7 +217,7 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <label htmlFor="cardImage">
-        Imagem:
+        Image:
         <input
           onChange={handleChange}
           type="text"
@@ -227,16 +227,16 @@ function Form({ cardForm, onFormChange }) {
         />
       </label>
       <label htmlFor="cardRare">
-        Raridade:
+        Rarity:
         <select
           onChange={handleChange}
           name="cardRare"
           id="cardRare"
           value={cardRare}
         >
-          <option value="normal">normal</option>
-          <option value="raro">raro</option>
-          <option value="muito raro">muito raro</option>
+          <option value="Normal">Normal</option>
+          <option value="Rare">Rare</option>
+          <option value="Very Rare">Very Rare</option>
         </select>
       </label>
       <label htmlFor="cardTrunfo">
@@ -256,10 +256,10 @@ function Form({ cardForm, onFormChange }) {
       {
         //primeiro edita e o segundo salva
         isEditing ? (
-          <button onClick={onClickBtnToSaveEdit}>Salvar ✏️</button>
+          <button onClick={onClickBtnToSaveEdit}>Save Edit</button>
         ) : (
           <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
-            Salvar +
+            Save Card
           </button>
         )
       }

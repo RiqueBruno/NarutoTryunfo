@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import "./CardFilter.css";
 import { setCollectionCards } from "../../utils/CardCollectionWS";
 
-function CardFilter({ CardsColection, setCardForm }) {  
+function CardFilter({ CardsColection, setCardForm }) {
   const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo) || false;
 
   const deleteCard = ({ target: { id } }) => {
@@ -14,13 +14,13 @@ function CardFilter({ CardsColection, setCardForm }) {
       CardsColection: newCollection,
       hasTrunfo: hasTrunfoFunc(newCollection),
     }));
-    setCollectionCards("CardsColection", newCollection)
+    setCollectionCards("CardsColection", newCollection);
   };
 
   const editCard = ({ target: { id } }) => {
     const cardToEdit = CardsColection.filter((card) => card.id == id);
     const card = cardToEdit[0];
-    
+
     setCardForm((prevState) => ({
       ...prevState,
       cardName: card.cardName,
@@ -34,7 +34,7 @@ function CardFilter({ CardsColection, setCardForm }) {
       isEditing: true,
       cardID: card.id,
     }));
-  }
+  };
 
   return (
     <div className="filter">
@@ -45,9 +45,9 @@ function CardFilter({ CardsColection, setCardForm }) {
               <Card
                 cardName={card.cardName}
                 cardDescription={card.cardDescription}
-                cardAttr1={card.cardAttr1}
-                cardAttr2={card.cardAttr2}
-                cardAttr3={card.cardAttr3}
+                cardAttr1={card.cardAttr1.toString()}
+                cardAttr2={card.cardAttr2.toString()}
+                cardAttr3={card.cardAttr3.toString()}
                 cardImage={card.cardImage}
                 cardRare={card.cardRare}
                 cardTrunfo={card.cardTrunfo}
@@ -71,6 +71,6 @@ function CardFilter({ CardsColection, setCardForm }) {
 export default CardFilter;
 
 CardFilter.propTypes = {
-  CardsColection: PropTypes.array.isRequired,
+  CardsColection: PropTypes.array,
   setCardForm: PropTypes.func.isRequired,
 };

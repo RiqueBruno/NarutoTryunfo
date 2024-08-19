@@ -5,9 +5,10 @@ export const setCollectionCards = (name, arr) => {
 }
 
 export const getCollectionCards = (name) => {
-    const collection = JSON.parse(localStorage.getItem(name)) || cards;
-    if(collection.length === 0) {
-        setCollectionCards(name, collection);
+    let collection = JSON.parse(localStorage.getItem(name));
+    if(!collection) {
+        setCollectionCards(name, cards);
+        collection = [...cards]
     }
     return collection;
 }
@@ -22,5 +23,6 @@ export const getRank = (name) => {
 
 export default {
     getCollectionCards,
-    setCollectionCards
+    setCollectionCards,
+    getRank
 };

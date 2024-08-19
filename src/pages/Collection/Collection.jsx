@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Form from "../../components/Form/Form";
 import Card from "../../components/Card/Card";
 import CardFilter from "../../components/CardFilter/CardFilter";
-import { getCollectionCards } from "../../utils/CardCollectionWS"
+import { getCollectionCards } from "../../utils/CardCollectionWS";
 import "./Collection.css";
 
 export default function Collection() {
@@ -13,13 +13,13 @@ export default function Collection() {
     cardAttr2: "",
     cardAttr3: "",
     cardImage: "",
-    cardRare: "normal",
+    cardRare: "Normal",
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     CardsColection: [],
     isEditing: false,
-    cardID:'',
+    cardID: "",
   });
 
   const handleFormChange = (newCardForm) => {
@@ -58,7 +58,10 @@ export default function Collection() {
         </div>
       </div>
       <div className="filterBase">
-        <CardFilter CardsColection={cardForm.CardsColection} setCardForm={setCardForm}/>
+        <CardFilter
+          CardsColection={cardForm.CardsColection}
+          setCardForm={setCardForm}
+        />
       </div>
     </div>
   );

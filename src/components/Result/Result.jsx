@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 import RankSave from "../RankSave/RankSave";
+import "./Result.css";
 
 function Result({ cardStatus }) {
   const { plrScore, compScore, totalScore } = cardStatus;
@@ -18,12 +19,7 @@ function Result({ cardStatus }) {
       </div>
       <RankSave totalScore={totalScore} />
       <div>
-        <Link className="linkClass" to="/game">
-          Restart
-        </Link>
-        <Link className="linkClass" to="/">
-          Home
-        </Link>
+        <Link to="/">Home</Link>
       </div>
     </div>
   );

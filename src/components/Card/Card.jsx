@@ -32,11 +32,11 @@ function Card({
             <div className="atributeCard1">{cardAttr1}</div>
           </div>
           <div className="AtribCard">
-            <p>FORÇA</p>
+            <p>POWER</p>
             <div className="atributeCard2">{cardAttr2}</div>
           </div>
           <div className="AtribCard">
-            <p>DEFESA</p>
+            <p>HP</p>
             <div className="atributeCard3">{cardAttr3}</div>
           </div>
         </div>
@@ -48,12 +48,12 @@ function Card({
 export default Card;
 
 Card.propTypes = {
-  cardName: PropTypes.string.isRequired,
-  cardDescription: PropTypes.string.isRequired,
-  cardAttr1: PropTypes.string.isRequired,
-  cardAttr2: PropTypes.string.isRequired,
-  cardAttr3: PropTypes.string.isRequired,
-  cardImage: PropTypes.string.isRequired,
-  cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool.isRequired,
+  cardName: PropTypes.string,
+  cardDescription: PropTypes.string,
+  cardAttr1: PropTypes.string,
+  cardAttr2: PropTypes.string,
+  cardAttr3: PropTypes.string,
+  cardImage: PropTypes.string,
+  cardRare: PropTypes.string,
+  cardTrunfo: PropTypes.bool,
 };

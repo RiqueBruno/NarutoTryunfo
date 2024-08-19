@@ -1,24 +1,41 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import { getRank, setCollectionCards } from "../../utils/CardCollectionWS";
 
 function RankSave({ totalScore }) {
-  const onClickToSave = ({ target: { value } }) => {
-    const score = totalScore || 0;
+  const [name, setName] = useState("");
+  const [save, setSave] = useState(false);
+
+  const onClickToSave = () => {
+    const score = Number(totalScore) || 0;
+    const nName = name || "noName";
+
     const rank = getRank("rank");
-    const newRank = [...rank, { [value]: score }];
+    const newRank = [...rank, { name: nName, score }];
+
     setCollectionCards("rank", newRank);
+    setSave((prevSave) => !prevSave);
   };
 
   return (
     <div>
       <div>
-        <label htmlFor="PlayerName">
-          <input type="text" name="PlayerName" id="PlayerName" />
+        <label htmlFor="name">
+          <input
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+          />
         </label>
       </div>
       <div>
-        <button onClick={onClickToSave}>Save</button>
+        {save ? (
+          <p>Salvo com Sucesso!</p>
+        ) : (
+          <button onClick={onClickToSave}>Save</button>
+        )}
       </div>
     </div>
   );

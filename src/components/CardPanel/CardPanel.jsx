@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { shuffleCollection } from "../../utils/shuffleCollection";
 import Card from "../Card/Card";
 import Result from "../Result/Result";
+import "./CardPanel.css";
 
 function CardPanel({ collection }) {
   const [cardsPlayer, setCardsPlayer] = useState(shuffleCollection(collection));
@@ -89,7 +90,7 @@ function CardPanel({ collection }) {
         <div>{cardStatus.plrScore}</div>
         <div>deck de costas</div>
         {panel.start ? (
-          <div>
+          <div className="card-container">
             <Card
               cardName={cardStatus.plrCard.cardName}
               cardDescription={cardStatus.plrCard.cardDescription}
