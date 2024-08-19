@@ -10,7 +10,7 @@
     position: relative;
     justify-content: right;
     box-shadow: #562401 4px 4px 10px;
-    z-index: 1;
+    z-index: 9999;
 }
 
 .imgLink {

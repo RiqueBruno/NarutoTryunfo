@@ -1,14 +1,44 @@
 main {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: blue;
+    z-index: 1;
 }
 
 .btnPlay {
-    position: absolute;
+    position: relative;
+    width: 300px;
+    cursor: pointer;
+    border: solid rgb(69, 230, 221);
+    font-family: Roboto;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    transition: 0.2s;
+    border-radius: 25px;
+    background: linear-gradient(278deg, rgb(119, 0, 204) 0%, rgb(230, 124, 48) 65%);
+    font-weight: 100;
+    --hover-borderSize: 0px;
+    --hover-bgc: #00cc81;
+    --hover-width: 335px;
+    z-index: 10;
+}
+
+.btnPlay:hover{
+    background: linear-gradient(278deg, rgb(230, 124, 48) 0%, rgb(119, 0, 204) 65%);
+    border-color: rgb(204, 0, 105);
 }
 
 .bkg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-size: cover;
+    z-index: 2;
 }
