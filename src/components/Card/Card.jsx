@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import SuperTrunfo from "../../assets/Logo.png";
 import "./Card.css";
 
 function Card({
@@ -13,10 +14,20 @@ function Card({
   cardTrunfo,
 }) {
   return (
-    <div className="baseCard">
-      <div className="superTrunfo">{cardTrunfo ? "Super Trunfo" : ""}</div>
+    <div className={`baseCard baseCard${cardRare} baseCard${cardTrunfo}`}>
+      <div className="superTrunfo">
+        {cardTrunfo ? (
+          <img
+            className="superTrunfoIMG"
+            src={SuperTrunfo}
+            alt="Super Trunfo Card"
+          />
+        ) : (
+          ""
+        )}
+      </div>
       <div className="upCard">
-        <div className="cabCard">
+        <div className={`cabCard cabCard${cardRare}`}>
           <p className="rarityCard">{cardRare}</p>
           <p className="nameCard">{cardName}</p>
         </div>
