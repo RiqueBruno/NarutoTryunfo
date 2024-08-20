@@ -22,7 +22,8 @@
   }
   
   .upCard {
-    background-color: white;
+    background-image: url('../../assets/sombraNaruto.png');
+    background-size: cover;
     border: 1px solid black;
     border-radius: 11px;
     display: flex;
@@ -69,6 +70,7 @@
     border-radius: 11px;
     height: 100%;
     width: 100%;
+    border: 1px solid;
     z-index: 0;
   }
   
