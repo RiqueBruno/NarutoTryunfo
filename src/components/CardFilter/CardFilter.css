@@ -1,20 +1,40 @@
-.filter {
+.listFilter {
     width: 100%;
     height: 100%;
     padding-top: 50px;
+}
+
+.filtersDiv {
+    background-image: url('../../assets/filter.png');
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    position: relative;
 }
 
 .listOfCards {
     width: 100%;
     height: 100%;
     display: flex;
+    
+    justify-content: center;
+}
+
+.cardsDiv {
+    background-image: url('../../assets/bkgFilter.png');
+    background-size: contain;
+    width: 82%;
+    margin-top: 0;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -2px;
+    padding-top: 10px;
 }
 
 .CardsOfList {
-    background-color: rgb(42, 165, 106);
-    width: 380px;
-    height: 540px;
+    width: 300px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
