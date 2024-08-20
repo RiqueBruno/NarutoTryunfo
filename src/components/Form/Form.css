@@ -5,9 +5,9 @@
     flex-direction: column;
     padding: 10px;
     justify-content: left;
-    border: 1px solid orange;
     border-radius: 10px;
     color: brown;
+    padding-top: 20px;
 }
 
 .formDiv label {
@@ -18,7 +18,6 @@
 }
 
 .formDiv label input[type=text],
-.formDiv label input[type=number],
 .formDiv label textarea {
     border: none;
     border-bottom: 2px solid orange;
@@ -29,6 +28,52 @@
     width: 340px;
     padding: 4px 4px 4px 10px;
     color: brown;
+}
+
+.textarea {
+  resize: none;
+}
+
+.atr input{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 340px;
+  height: 15px;
+  background: linear-gradient(90deg, #ffffff 0%, #f4c39e 50%, #ff6f00 100%);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.atr input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: brown;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.atr input::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: brown;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.atr input::-ms-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: brown;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .formDiv label select {

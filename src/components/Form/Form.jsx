@@ -84,9 +84,9 @@ function Form({ cardForm, onFormChange }) {
         id: generateId(cardName),
         cardName,
         cardDescription,
-        cardAttr1,
-        cardAttr2,
-        cardAttr3,
+        cardAttr1: Number(cardAttr1),
+        cardAttr2: Number(cardAttr2),
+        cardAttr3: Number(cardAttr3),
         cardImage,
         cardRare,
         cardTrunfo,
@@ -98,9 +98,9 @@ function Form({ cardForm, onFormChange }) {
         ...prevForm,
         cardName: "",
         cardDescription: "",
-        cardAttr1: "",
-        cardAttr2: "",
-        cardAttr3: "",
+        cardAttr1: "0",
+        cardAttr2: "0",
+        cardAttr3: "0",
         cardImage: "",
         cardRare: "normal",
         cardTrunfo: false,
@@ -176,45 +176,56 @@ function Form({ cardForm, onFormChange }) {
           name="cardName"
           id="cardName"
           value={cardName}
+          maxLength="20"
         />
       </label>
       <label htmlFor="cardDescription">
         Description:
         <textarea
+          className="textarea"
           onChange={handleChange}
           name="cardDescription"
           id="cardDescription"
           value={cardDescription}
         />
       </label>
-      <label htmlFor="cardAttr1">
+      <label className="atr" htmlFor="cardAttr1">
         Chakra:
         <input
           onChange={handleChange}
-          type="number"
+          type="range"
           name="cardAttr1"
           id="cardAttr1"
           value={cardAttr1}
+          min="0"
+          max="100"
+          step="1"
         />
       </label>
-      <label htmlFor="cardAttr2">
+      <label className="atr" htmlFor="cardAttr2">
         Power:
         <input
           onChange={handleChange}
-          type="number"
+          type="range"
           name="cardAttr2"
           id="cardAttr2"
           value={cardAttr2}
+          min="0"
+          max="100"
+          step="1"
         />
       </label>
-      <label htmlFor="cardAttr3">
+      <label className="atr" htmlFor="cardAttr3">
         HP:
         <input
           onChange={handleChange}
-          type="number"
+          type="range"
           name="cardAttr3"
           id="cardAttr3"
           value={cardAttr3}
+          min="0"
+          max="100"
+          step="1"
         />
       </label>
       <label htmlFor="cardImage">

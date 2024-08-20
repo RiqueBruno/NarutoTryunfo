@@ -9,9 +9,9 @@ export default function Collection() {
   const [cardForm, setCardForm] = useState({
     cardName: "",
     cardDescription: "",
-    cardAttr1: "",
-    cardAttr2: "",
-    cardAttr3: "",
+    cardAttr1: "0",
+    cardAttr2: "0",
+    cardAttr3: "0",
     cardImage: "",
     cardRare: "Normal",
     cardTrunfo: false,
