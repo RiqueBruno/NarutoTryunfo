@@ -8,7 +8,7 @@ function CardFilter({ CardsColection, setCardForm }) {
   const hasTrunfoFunc = (arr) => arr.some((card) => card.cardTrunfo) || false;
 
   const deleteCard = ({ target: { id } }) => {
-    const newCollection = CardsColection.find((card) => card.id !== id) || [];
+    const newCollection = CardsColection.filter((card) => card.id !== id) || [];
     setCardForm((prevState) => ({
       ...prevState,
       CardsColection: newCollection,
@@ -39,8 +39,8 @@ function CardFilter({ CardsColection, setCardForm }) {
   return (
     <div className="filter">
       <div className="listOfCards">
-        {CardsColection.map((card, index) => (
-          <div className="CardsOfList" key={index}>
+        {CardsColection.map((card) => (
+          <div className="CardsOfList" key={`${card.cardName}-${Date.now()}`}>
             <div className="card">
               <Card
                 cardName={card.cardName}

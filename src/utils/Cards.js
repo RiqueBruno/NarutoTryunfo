@@ -1,5 +1,8 @@
+import { generateId } from "./GenerateID";
+
 export const cards = [
     {
+      id: generateId("Naruto Uzumaki"),
       cardName: "Naruto Uzumaki",
       cardDescription: "O ninja que nunca desiste e sonha em se tornar Hokage.",
       cardAttr1: 80,
@@ -10,6 +13,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Sasuke Uchiha"),
       cardName: "Sasuke Uchiha",
       cardDescription: "Último sobrevivente do clã Uchiha, busca vingança.",
       cardAttr1: 50,
@@ -20,6 +24,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Sakura Haruno"),
       cardName: "Sakura Haruno",
       cardDescription: "Ninja médica e membro do Time 7, possui força incrível.",
       cardAttr1: 60,
@@ -30,6 +35,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Kakashi Hatake"),
       cardName: "Kakashi Hatake",
       cardDescription: "Conhecido como o ninja copiador, mestre do Time 7.",
       cardAttr1: 50,
@@ -40,6 +46,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Gaara"),
       cardName: "Gaara",
       cardDescription: "Jinchuuriki da Areia, protege sua vila com força imensa.",
       cardAttr1: 65,
@@ -50,6 +57,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Shikamaru Nara"),
       cardName: "Shikamaru Nara",
       cardDescription: "Gênio estrategista, prefere evitar confrontos diretos.",
       cardAttr1: 50,
@@ -60,6 +68,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Rock Lee"),
       cardName: "Rock Lee",
       cardDescription: "Especialista em taijutsu, possui determinação inabalável.",
       cardAttr1: 0,
@@ -70,6 +79,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Hinata Hyuga"),
       cardName: "Hinata Hyuga",
       cardDescription: "Membro do clã Hyuga, possui habilidades únicas com o Byakugan.",
       cardAttr1: 65,
@@ -80,6 +90,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Neji Hyuga"),
       cardName: "Neji Hyuga",
       cardDescription: "Gênio do clã Hyuga, mestre em habilidades com o Byakugan.",
       cardAttr1: 70,
@@ -90,6 +101,7 @@ export const cards = [
       cardTrunfo: false,
     },
     {
+      id: generateId("Itachi Uchiha"),
       cardName: "Itachi Uchiha",
       cardDescription: "Misterioso e poderoso ninja, carrega um grande segredo.",
       cardAttr1: 80,
