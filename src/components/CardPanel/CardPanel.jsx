@@ -36,7 +36,11 @@ function CardPanel({ collection }) {
   };
 
   const getCard = () => {
-    setPanel((prevPanel) => ({ ...prevPanel, start: !prevPanel.start }));
+    setPanel((prevPanel) => ({
+      ...prevPanel,
+      start: !prevPanel.start,
+      turn: false,
+    }));
   };
 
   const onClickAtribute = ({ target: { id } }) => {
@@ -81,7 +85,6 @@ function CardPanel({ collection }) {
       setPanel((prevPanel) => ({
         ...prevPanel,
         start: !prevPanel.start,
-        turn: !prevPanel.turn,
       }));
     } else {
       setPanel((prevPanel) => ({
@@ -101,6 +104,7 @@ function CardPanel({ collection }) {
         </div>
       ) : (
         <div className="cardPanel">
+          <div className="scoreTotalGame">{cardStatus.totalScore}</div>
           <div className="playerSide">
             <div className="scorePlayer">{`Win: ${cardStatus.plrScore}`}</div>
             <div className="deckPlayer">
@@ -137,29 +141,38 @@ function CardPanel({ collection }) {
               </div>
             </div>
           </div>
+          {/* PARTE DO COMPUTADOR*/}
           <div className="computerSide">
-            <div>{cardStatus.compScore}</div>
-            <div>deck de costas</div>
-            <div>
-              {panel.turn ? (
-                <Card
-                  cardName={cardStatus.compCard.cardName}
-                  cardDescription={cardStatus.compCard.cardDescription}
-                  cardAttr1={cardStatus.compCard.cardAttr1.toString()}
-                  cardAttr2={cardStatus.compCard.cardAttr2.toString()}
-                  cardAttr3={cardStatus.compCard.cardAttr3.toString()}
-                  cardImage={cardStatus.compCard.cardImage}
-                  cardRare={cardStatus.compCard.cardRare}
-                  cardTrunfo={cardStatus.compCard.cardTrunfo}
-                />
-              ) : (
-                <div>Carta de costas</div>
-              )}
+            <div className="scoreComp">{`Win: ${cardStatus.compScore}`}</div>
+            <div className="deckPlayer">
+              <div className="deckPlayer1"></div>
+              <div className="deckPlayer2"></div>
+              <div className="deckPlayer3"></div>
+              <div className="deckPlayer4"></div>
+              <div className="deckPlayer5"></div>
+            </div>
+            <div className={`cardFlipComp cardFlipComp${panel.turn}`}>
+              <div className="card-container-comp-back">
+                <div className="card-container2">
+                  <Card
+                    cardName={cardStatus.compCard.cardName}
+                    cardDescription={cardStatus.compCard.cardDescription}
+                    cardAttr1={cardStatus.compCard.cardAttr1.toString()}
+                    cardAttr2={cardStatus.compCard.cardAttr2.toString()}
+                    cardAttr3={cardStatus.compCard.cardAttr3.toString()}
+                    cardImage={cardStatus.compCard.cardImage}
+                    cardRare={cardStatus.compCard.cardRare}
+                    cardTrunfo={cardStatus.compCard.cardTrunfo}
+                  />
+                </div>
+              </div>
+              <div className={`backCardPlayerDiv-comp-front`}>
+                <div className="backCardPlayer-comp"></div>
+              </div>
             </div>
           </div>
         </div>
       )}
-      <div className="scoreTotalGame">{cardStatus.totalScore}</div>
     </div>
   );
 }

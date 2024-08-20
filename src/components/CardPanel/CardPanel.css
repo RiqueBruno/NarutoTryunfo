@@ -207,3 +207,87 @@
 }
 
 /* ---------------- PARTE COMPUTADOR -------------------*/
+
+.scoreComp {
+  position: absolute;
+  background-color: orange;
+  width: 100px;
+  height: 70px;
+  right: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0% 50% 50% 0%;
+  z-index: 5000;
+}
+
+.cardFlipComp {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 2px;
+  margin-top: 10px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: all 0.2s ease-in-out;
+}
+
+.cardFlipComptrue {
+  transform: rotateY(180deg);
+}
+
+.card-container-comp-back {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  right: -15px;
+  top: 10px;
+}
+
+.backCardPlayerDiv-comp-front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -18px;
+  margin-top: 30px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.card-container2 {
+  background: #371700;
+  border: 10px solid #a54500f6;
+  border-radius: 9px;
+  height: 450px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.card-container-comp-back {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.backCardPlayer-comp {
+  background: #371700;
+  border: 10px solid #a54500f6;
+  border-radius: 9px;
+  height: 450px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
