@@ -84,46 +84,47 @@ function CardPanel({ collection }) {
   };
 
   return (
-    <div>
-      {panel.final ? <Result cardStatus={cardStatus} /> : ""}
-      <div>
-        <div>{cardStatus.plrScore}</div>
-        <div>deck de costas</div>
-        {panel.start ? (
-          <div className="card-container">
-            <Card
-              cardName={cardStatus.plrCard.cardName}
-              cardDescription={cardStatus.plrCard.cardDescription}
-              cardAttr1={cardStatus.plrCard.cardAttr1.toString()}
-              cardAttr2={cardStatus.plrCard.cardAttr2.toString()}
-              cardAttr3={cardStatus.plrCard.cardAttr3.toString()}
-              cardImage={cardStatus.plrCard.cardImage}
-              cardRare={cardStatus.plrCard.cardRare}
-              cardTrunfo={cardStatus.plrCard.cardTrunfo}
-            />
-            <div>
-              <button id="cardAttr1" onClick={onClickAtribute}>
-                0
-              </button>
-              <button id="cardAttr2" onClick={onClickAtribute}>
-                0
-              </button>
-              <button id="cardAttr3" onClick={onClickAtribute}>
-                0
-              </button>
+    <div className="cardPanel">
+      <div className="resultGame">
+        {panel.final ? <Result cardStatus={cardStatus} /> : ""}
+      </div>
+      <div className="playerSide">
+        <div className="scorePlayer">{`Win: ${cardStatus.plrScore}`}</div>
+        <div className="deckPlayer">
+          <div className="deckPlayer1"></div>
+          <div className="deckPlayer2"></div>
+          <div className="deckPlayer3"></div>
+          <div className="deckPlayer4"></div>
+          <div className="deckPlayer5"></div>
+        </div>
+        <div className={`cardFlip cardFlip${panel.start}`}>
+          <div className={`card-container`}>
+            <div className="card-container1">
+              <Card
+                cardName={cardStatus.plrCard.cardName}
+                cardDescription={cardStatus.plrCard.cardDescription}
+                cardAttr1={cardStatus.plrCard.cardAttr1.toString()}
+                cardAttr2={cardStatus.plrCard.cardAttr2.toString()}
+                cardAttr3={cardStatus.plrCard.cardAttr3.toString()}
+                cardImage={cardStatus.plrCard.cardImage}
+                cardRare={cardStatus.plrCard.cardRare}
+                cardTrunfo={cardStatus.plrCard.cardTrunfo}
+              />
+              <div className="btnPanel">
+                <button id="cardAttr1" onClick={onClickAtribute} />
+                <button id="cardAttr2" onClick={onClickAtribute} />
+                <button id="cardAttr3" onClick={onClickAtribute} />
+              </div>
             </div>
           </div>
-        ) : (
-          <div>
-            <div>carta de costas</div>
-            <button onClick={getCard}>Get Card</button>
+          <div className={`backCardPlayerDiv`}>
+            <div className="backCardPlayer">
+              <button onClick={getCard}>Get Card</button>
+            </div>
           </div>
-        )}
+        </div>
       </div>
-
-      <div>interação</div>
-
-      <div>
+      <div className="computerSide">
         <div>{cardStatus.compScore}</div>
         <div>deck de costas</div>
         <div>
@@ -143,7 +144,7 @@ function CardPanel({ collection }) {
           )}
         </div>
       </div>
-      <div>{cardStatus.totalScore}</div>
+      <div className="scoreTotalGame">{cardStatus.totalScore}</div>
     </div>
   );
 }
