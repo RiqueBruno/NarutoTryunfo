@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { setCollectionCards } from "../../utils/CardCollectionWS";
 import { generateId } from "../../utils/GenerateID";
+import "./Form.css";
 
 function Form({ cardForm, onFormChange }) {
   const {
@@ -166,7 +167,7 @@ function Form({ cardForm, onFormChange }) {
   };
 
   return (
-    <div>
+    <div className="formDiv">
       <label htmlFor="cardName">
         Name:
         <input
@@ -239,12 +240,13 @@ function Form({ cardForm, onFormChange }) {
           <option value="Very Rare">Very Rare</option>
         </select>
       </label>
-      <label htmlFor="cardTrunfo">
+      <label htmlFor="cardTrunfo" className="labelCheckbox">
         Super Trunfo:
         {hasTrunfo ? (
-          "Você já tem um Super Trunfo em seu baralho"
+          <p>{`You already have a Super Trunfo in your deck!`}</p>
         ) : (
           <input
+            className="checkbox"
             onChange={handleChange}
             type="checkbox"
             name="cardTrunfo"
@@ -253,16 +255,24 @@ function Form({ cardForm, onFormChange }) {
           />
         )}
       </label>
-      {
-        //primeiro edita e o segundo salva
-        isEditing ? (
-          <button onClick={onClickBtnToSaveEdit}>Save Edit</button>
-        ) : (
-          <button onClick={onClickBtn} disabled={isSaveButtonDisabled}>
-            Save Card
-          </button>
-        )
-      }
+      <div className="divBtn">
+        {
+          //primeiro edita e o segundo salva
+          isEditing ? (
+            <button className="btnFrom" onClick={onClickBtnToSaveEdit}>
+              Save Edit
+            </button>
+          ) : (
+            <button
+              className="btnFrom"
+              onClick={onClickBtn}
+              disabled={isSaveButtonDisabled}
+            >
+              Save Card
+            </button>
+          )
+        }
+      </div>
     </div>
   );
 }

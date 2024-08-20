@@ -1,0 +1,141 @@
+.formDiv {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: left;
+    border: 1px solid orange;
+    border-radius: 10px;
+    color: brown;
+}
+
+.formDiv label {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formDiv label input[type=text],
+.formDiv label input[type=number],
+.formDiv label textarea {
+    border: none;
+    border-bottom: 2px solid orange;
+    outline: none;
+    transition: border-bottom-width 0.3s ease;
+    border-radius: 4px;
+    margin-left: 10px;
+    width: 340px;
+    padding: 4px 4px 4px 10px;
+    color: brown;
+}
+
+.formDiv label select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid orange;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij4KICA8cGF0aCBkPSJNMTIuMiwxMy44TDI0LDI1LjZsMTEuOC0xMS44TDI4LDExTDQsMzBMMTIsMTJMMTIuMiwxMy44eiIgZmlsbD0iI0FBQUI4QiIvPgo8L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+    width: 340px;
+    color: brown;
+  }
+  
+  .formDiv label select:focus {
+    border-color: darkorange;
+    outline: none;
+  }
+  
+  .formDiv label select option {
+    padding: 8px;
+  }
+
+
+.labelCheckbox {
+  position: relative;
+  height: 40px;
+  align-items: center;
+  border: 0;
+  color: brown;
+}
+
+.labelCheckbox p {
+  color: orangered;
+  position: absolute;
+  left: 100px;
+}
+
+.checkbox {
+  appearance: none;
+  height: 30px;
+  width: 60px;
+  border: 1px solid orange;
+  position: absolute;
+  left: 100px;
+  cursor: pointer;
+  outline: none;
+  opacity: 100;
+  border-radius: 50px;
+}
+
+.labelCheckbox:focus {
+  border-bottom-width: 0;
+}
+
+.checkbox:before {
+  content: '';
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  background-color: brown;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+}
+
+.checkbox:checked {
+  background-color: orange;
+}
+
+.checkbox:checked:before {
+  left: 31px;
+}
+
+.divBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.btnFrom {
+  width: 50%;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: chocolate;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btnFrom:hover {
+  background-color: rgb(222, 124, 54);
+}
+
+.btnFrom:disabled {
+  background-color: rgb(177, 149, 130);
+  cursor: auto;
+}
+
+.btnFrom:disabled:hover {
+  background-color: rgb(177, 149, 130);
+}
