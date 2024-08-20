@@ -41,7 +41,6 @@ function CardFilter({ CardsColection, setCardForm }) {
       <div className="filtersDiv"></div>
       <div className="listOfCards">
         <div className="cardsDiv">
-          {" "}
           {CardsColection.map((card) => (
             <div className="CardsOfList" key={`${card.cardName}-${Date.now()}`}>
               <div className="card">
@@ -57,10 +56,14 @@ function CardFilter({ CardsColection, setCardForm }) {
                 />
               </div>
               <div className="cardMenu">
-                <button id={card.id} onClick={editCard}>
+                <button className="editCard" id={card.id} onClick={editCard}>
                   ✏️
                 </button>
-                <button id={card.id} onClick={deleteCard}>
+                <button
+                  className="deleteCard"
+                  id={card.id}
+                  onClick={deleteCard}
+                >
                   🗑️
                 </button>
               </div>
