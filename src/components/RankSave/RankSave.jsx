@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { getRank, setCollectionCards } from "../../utils/CardCollectionWS";
+import "./RankSave.css";
 
 function RankSave({ totalScore }) {
   const [name, setName] = useState("");
@@ -18,9 +19,10 @@ function RankSave({ totalScore }) {
   };
 
   return (
-    <div>
-      <div>
+    <div className="rankPanel">
+      <div className="divRankSave">
         <label htmlFor="name">
+          <p>Enter your nickname to save to the ranking:</p>
           <input
             onChange={(e) => setName(e.target.value)}
             type="text"
@@ -30,9 +32,9 @@ function RankSave({ totalScore }) {
           />
         </label>
       </div>
-      <div>
+      <div className="divRankSave">
         {save ? (
-          <p>Salvo com Sucesso!</p>
+          <p>Saved successfully!</p>
         ) : (
           <button onClick={onClickToSave}>Save</button>
         )}
