@@ -26,7 +26,7 @@ Jogando:
 
 ## Stack utilizada
 
-**Front-end:** React, CSS, Javascript
+**Front-end:** React, CSS, Javascript, Vite
 
 
 
