@@ -7,15 +7,15 @@ import "./Result.css";
 function Result({ cardStatus }) {
   const { plrScore, compScore, totalScore } = cardStatus;
   const result = () => {
-    if (plrScore > compScore) return "VITÓRIA!!!";
-    if (plrScore < compScore) return "DERROTA!";
-    if (plrScore == compScore) return "EMPATE.";
+    if (plrScore > compScore) return "VICTORY!!!";
+    if (plrScore < compScore) return "DEFEAT!";
+    if (plrScore == compScore) return "DRAW.";
   };
   return (
     <div className="divResult">
       <div className="infoResult">
-        <h2>{`Resultado: ${result()}`}</h2>
-        <p>{`Pontuação: ${totalScore}`}</p>
+        <h2>{`Result: ${result()}`}</h2>
+        <p>{`Points: ${totalScore}`}</p>
       </div>
       <RankSave totalScore={totalScore} />
       <div className="panelResult">
