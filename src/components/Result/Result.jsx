@@ -12,14 +12,16 @@ function Result({ cardStatus }) {
     if (plrScore == compScore) return "EMPATE.";
   };
   return (
-    <div>
-      <div>
-        <h2>`Resultado: ${result}`</h2>
-        <p>`Pontuação: ${totalScore}`</p>
+    <div className="divResult">
+      <div className="infoResult">
+        <h2>{`Resultado: ${result()}`}</h2>
+        <p>{`Pontuação: ${totalScore}`}</p>
       </div>
       <RankSave totalScore={totalScore} />
-      <div>
-        <Link to="/">Home</Link>
+      <div className="panelResult">
+        <Link className="Link" to="/">
+          Home
+        </Link>
       </div>
     </div>
   );
