@@ -45,5 +45,6 @@ Link:
 | Cor aux. 3       | ![#008000](https://via.placeholder.com/10/008000?text=+) #008000 |
 
 
-![Logo]('./src/assets/Logo.png')
+<img src="./src/assets/Logo.png" alt="Naruto Tryunfo Logo" width="300" height="auto">
+
 
