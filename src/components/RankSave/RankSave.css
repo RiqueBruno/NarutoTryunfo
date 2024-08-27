@@ -24,7 +24,8 @@
 
 .divRankSave input {
     border: none;
-    border-bottom: orange 1px solid;
+    margin-top: 20px;
+    border-bottom: rgb(255, 72, 0) 1px solid;
     border-radius: 4px;
     padding-left: 10px;
     &:focus {

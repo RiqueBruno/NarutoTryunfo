@@ -28,6 +28,7 @@ function RankSave({ totalScore }) {
             type="text"
             name="name"
             id="name"
+            placeholder="Nickname"
             value={name}
           />
         </label>

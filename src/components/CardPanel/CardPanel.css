@@ -21,13 +21,13 @@
   .scorePlayer {
     position: absolute;
     background-color: orange;
-    width: 100px;
+    width: 80px;
     height: 70px;
-    left: 210px;
+    left: 230px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0% 50% 50% 0%;
+    border-radius: 50%;
     z-index: 5000;
   }
   
@@ -177,13 +177,13 @@
   .scoreComp {
     position: absolute;
     background-color: orange;
-    width: 100px;
+    width: 80px;
     height: 70px;
-    right: 208px;
+    right: 230px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50% 0% 0% 50%;
+    border-radius: 50%;
     z-index: 5000;
   }
   
