@@ -1,0 +1,66 @@
+@media screen and (max-width: 700px) {
+    .not-found-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        color: orangered;
+        position: relative;
+    }
+    
+    .not-found-page h1 {
+        font-size: 100px;
+    }
+    
+    .not-found-page p {
+        color: orangered;
+        text-align: center;
+        width: 80%;
+    }
+    
+    .nfImage {
+        position: absolute;
+        background-image: url('../../assets/narutoSadNtFMobile.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 300px;
+        width:  200px;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .not-found-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        color: orangered;
+        position: relative;
+    }
+    
+    .not-found-page h1 {
+        font-size: 100px;
+    }
+    
+    .not-found-page p {
+        color: orangered;
+    }
+    
+    .nfImage {
+        position: absolute;
+        background-image: url('../../assets/narutoSadNtF.png');
+        background-repeat: no-repeat;
+        height: 400px;
+        width:  300px;
+        left: 0;
+        top: 40px;
+    }
+}

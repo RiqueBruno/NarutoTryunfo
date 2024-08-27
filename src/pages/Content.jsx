@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Game from "./Game/Game";
 import Cards from "./Collection/Collection";
-import NtFound from "./NtFound";
+import NtFound from "./NotFound/NtFound";
 import Home from "./Home/Home";
 import Rank from "./Rank/Rank";
 import "./Content.css";
