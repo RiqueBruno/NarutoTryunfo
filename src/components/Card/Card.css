@@ -174,10 +174,10 @@
 
   .superTrunfo {
     position: absolute;
-    width: 150px;
-    height: 100px;
+    width: 100px;
+    height: 60px;
     right: -10px;
-    top: 150px;
+    top: 110px;
     z-index: 20;
   }
 
