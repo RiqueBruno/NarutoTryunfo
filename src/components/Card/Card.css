@@ -1,4 +1,219 @@
-.baseCard {
+@media screen and (max-width: 700px) {
+  .baseCard {
+    align-items: center;
+    background: #371700;
+    border: 10px solid #a54500f6;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin: 2%;
+    position: absolute;
+    width: 200px;
+  }
+
+  .baseCard:hover {
+    zoom: 1.5;
+  }
+
+  .baseCardRare {
+    background: #025d05;
+    border: 10px solid #064a06f6;
+  }
+
+  .baseCardVery {
+    background: #8a039c;
+    border: 10px solid #43064af6;
+  }
+  
+  .upCard {
+    background-image: url('../../assets/sombraNaruto.png');
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 11px;
+    display: flex;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.7));
+    flex-flow: wrap;
+    height: 50%;
+    margin-top: 5%;
+    width: 90%;
+  }
+  
+  .cabCard {
+    background: linear-gradient(180deg, #e86100 68.23%, rgba(21, 14, 8, 0) 100%);
+    border-radius: 9px 11px 0 0;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .cabCardRare {
+    background: linear-gradient(180deg, #03970a 68.23%, rgba(21, 14, 8, 0) 100%);
+    color: white;
+  }
+
+  .cabCardVery {
+    background: linear-gradient(180deg, #a644f6 68.23%, rgba(21, 14, 8, 0) 100%);
+    color: white;
+  }
+  
+  .rarityCard {
+    margin: 5px 0 20px 10px;
+    width: 40%;
+    font-size: 12px;
+  }
+  
+  .nameCard {
+    display: flex;
+    justify-content: end;
+    margin: 5px 10px 0;
+    width: 60%;
+    font-size: 11px;
+  }
+  
+  .imageCard {
+    border-radius: 11px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    z-index: 0;
+  }
+  
+  .btpartCard {
+    background: radial-gradient(50% 50% at 50% 50%, #c7c6c6 0%, #8372699e 100%);
+    border: 1px solid black;
+    border-radius: 6px;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.7));
+    height: 41%;
+    margin-top: 10px;
+    width: 90%;
+    position: relative;
+  }
+  
+  .divDescript {
+    max-height: 50%;
+    max-width: 100%;
+    overflow-y: auto;
+    padding: 8px;
+  }
+
+  .divDescript::-webkit-scrollbar {
+    width: 4px;               /* width of the entire scrollbar */
+  }
+  
+  .divDescript::-webkit-scrollbar-track {
+    background: rgb(160, 158, 155);        /* color of the tracking area */
+  }
+  
+  .divDescript::-webkit-scrollbar-thumb {
+    background-color: rgb(114, 114, 118);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(75, 74, 73);  /* creates padding around scroll thumb */
+  }
+  
+  .descriptionCard {
+    color: white;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    word-wrap: break-word;
+  }
+  
+  .atributeCardClass {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .atributeCardClass p {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    font-size: 10px;
+    text-align: center;
+  }
+  
+  .AtribCard {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-bottom: 4%;
+    text-align: center;
+  }
+
+  .atributeCard1,
+  .atributeCard2,
+  .atributeCard3 {
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    font-size: 12px;
+    height: 25px;
+    justify-content: center;
+    width: 25px;
+    align-items: center;
+  }
+  
+  .atributeCard2 {
+    background: radial-gradient(50% 50% at 50% 50%, #b72c00 0%, #822204 80.21%);
+    border: 1px solid #670000;
+  }
+  
+  .atributeCard1 {
+    background: radial-gradient(50% 50% at 50% 50%, #0096b7 51.56%, #017c97 100%);
+    border: 1px solid #012e72;
+  }
+  
+  .atributeCard3 {
+    background: radial-gradient(50% 50% at 50% 50%, #039b1b 42.19%, #017413 100%);
+    border: 1px solid #046302;
+  }
+
+  .superTrunfo {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    right: -10px;
+    top: 150px;
+    z-index: 20;
+  }
+
+  .superTrunfoIMG {
+    width: 100%;
+    height: 100%;
+  }
+
+  .baseCardtrue {
+    background: linear-gradient(90deg, rgba(84,255,88,1) 0%, rgba(249,243,63,1) 17%, rgba(237,101,229,1) 40%, rgba(74,27,177,1) 61%, rgba(0,212,255,1) 83%, rgba(0,255,181,1) 100%);
+    background-size: 300% 100%;
+    border: 10px solid #7b9498f6;
+    animation: bkgTrunfo 5s linear infinite alternate;
+  }
+
+  .baseCardtrue .upCard,
+  .baseCardtrue .btpartCard {
+    border-color: #0096b7;
+  }
+  
+  .baseCardtrue   .cabCard {
+    background: linear-gradient(180deg, #b6e0f0 68.23%, rgba(21, 14, 8, 0) 100%);
+  }
+
+  @keyframes bkgTrunfo {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .baseCard {
     align-items: center;
     background: #371700;
     border: 10px solid #a54500f6;
@@ -202,3 +417,4 @@
       background-position: 100% 50%;
     }
   }
+}
