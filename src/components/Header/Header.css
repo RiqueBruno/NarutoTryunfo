@@ -1,44 +1,88 @@
-.header {
-    background-color: #A54500;
-    display: flex;
-    height: 5vh;
-    width: 100%;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    position: relative;
-    justify-content: right;
-    box-shadow: #562401 4px 4px 10px;
-    z-index: 9999;
+@media screen and (max-width: 750px) {
+    .header {
+        background-color: #A54500;
+        display: flex;
+        height: 5vh;
+        width: 100%;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        position: relative;
+        justify-content: center;
+        box-shadow: #562401 4px 4px 10px;
+        z-index: 9999;
+    }
+    
+    .imgLink {
+        height: 300%;
+        position: absolute;
+        left: 90px;
+        margin-top: 150px;
+    }
+    
+    .imgLink > img {
+        height: 100%;
+    }
+    
+    .linkClass {
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .linkClass:hover {
+        border-radius: 10px;
+        background-color: orangered;
+        box-shadow: #562401 0 0 10px;
+    }
 }
 
-.imgLink {
-    height: 300%;
-    position: absolute;
-    left: 0;
-    margin-top: 40px;
-}
-
-.imgLink:hover {
-    height: 350%;
-    margin-top: 60px;
-    transition: 1s;
-}
-
-.imgLink > img {
-    height: 100%;
-}
-
-.linkClass {
-    text-decoration: none;
-    color: white;
-    padding: 20px;
-    font-size: 1rem;
-}
-
-.linkClass:hover {
-    border-radius: 10px;
-    background-color: orangered;
-    box-shadow: #562401 0 0 10px;
+@media screen and (min-width: 1200px) {
+    .header {
+        background-color: #A54500;
+        display: flex;
+        height: 5vh;
+        width: 100%;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        position: relative;
+        justify-content: right;
+        box-shadow: #562401 4px 4px 10px;
+        z-index: 9999;
+    }
+    
+    .imgLink {
+        height: 300%;
+        position: absolute;
+        left: 0;
+        margin-top: 40px;
+    }
+    
+    .imgLink:hover {
+        height: 350%;
+        margin-top: 60px;
+        transition: 1s;
+    }
+    
+    .imgLink > img {
+        height: 100%;
+    }
+    
+    .linkClass {
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+        font-size: 1rem;
+    }
+    
+    .linkClass:hover {
+        border-radius: 10px;
+        background-color: orangered;
+        box-shadow: #562401 0 0 10px;
+    }
 }
