@@ -10,7 +10,7 @@
         padding: 10px;
         position: relative;
         justify-content: center;
-        box-shadow: #562401 4px 4px 10px;
+        box-shadow: #562401 0px 4px 10px;
         z-index: 9999;
     }
     
