@@ -3,7 +3,9 @@
 <img src="./src/assets/Logo.png" alt="Naruto Tryunfo Logo" width="300" height="auto">
 > Uma aplicação interativa estilo "Super Trunfo" onde você cria e gerencia seu próprio baralho ninja!
 
-[![Deploy](https://img.shields.io/badge/Acesse_o_Projeto-Ver_Demo-orange?style=for-the-badge&logo=vercel)](https://naruto-tryunfo-bice.vercel.app/)
+## Demonstração
+
+Link: [Naruto Tryunfo](https://naruto-tryunfo.vercel.app)
 
 ## 🍃 Sobre o Projeto
 
